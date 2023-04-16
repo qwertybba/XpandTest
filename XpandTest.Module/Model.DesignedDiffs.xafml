@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Application Title="XpandTest">
+  <BOModel>
+    <Class Name="DevExpress.Persistent.BaseImpl.PermissionPolicy.PermissionPolicyUser" Caption="Base User" />
+  </BOModel>
+  <Options>
+    <LayoutManagerOptions RequiredFieldMark="*" />
+  </Options>
+  <ReactiveModules>
+    <Blazor>
+      <ListViewFeatures>
+        <ListViewFeatureDxDataGridModel Id="@fd8523e2-3b00-4ea6-b20b-7417893a53d7" AllowColumnDragDrop="True" ColumnResizeMode="NextColumn" ShowFilterRow="True" IsNewNode="True" />
+      </ListViewFeatures>
+    </Blazor>
+    <JobScheduler>
+      <Sources>
+        <JobSchedulerSource AssemblyName="XpandTest.Module" IsNewNode="True" />
+      </Sources>
+    </JobScheduler>
+  </ReactiveModules>
+  <SchemaModules>
+    <SchemaModule Name="CloneObjectModule" Version="22.2.5.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="22.2.5.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views>
+    <ListView Id="ApplicationUser_ListView" Caption="Users" />
+  </Views>
+</Application>
