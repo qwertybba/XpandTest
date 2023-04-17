@@ -62,9 +62,12 @@ public class Startup {
                 .Add<XpandTest.Module.XpandTestModule>()
             	.Add<XpandTestBlazorModule>();
             builder.ObjectSpaceProviders
-                .AddSecuredXpo((serviceProvider, options) => {
+
+                .AddSecuredXpo((serviceProvider, options) =>
+                {
                     string connectionString = null;
-                    if(Configuration.GetConnectionString("ConnectionString") != null) {
+                    if (Configuration.GetConnectionString("ConnectionString") != null)
+                    {
                         connectionString = Configuration.GetConnectionString("ConnectionString");
                     }
 #if EASYTEST
@@ -93,8 +96,9 @@ public class Startup {
                     options.IsSupportChangePassword = true;
                 });
         });
-        services.AddHangfire(configuration => configuration
-        .UsePostgreSqlStorage(Configuration.GetConnectionString("HangfireConnection")));
+        services.AddHangfire(config => config.UseInMemoryStorage());
+        //services.AddHangfire(configuration => configuration
+        //.UsePostgreSqlStorage(Configuration.GetConnectionString("HangfireConnection")));
         services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options => {
             options.LoginPath = "/LoginPage";
         });
