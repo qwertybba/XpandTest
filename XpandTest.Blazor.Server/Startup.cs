@@ -10,13 +10,7 @@ using XpandTest.Blazor.Server.Services;
 using DevExpress.Persistent.BaseImpl.PermissionPolicy;
 using DevExpress.ExpressApp.Core;
 using Hangfire;
-using Hangfire.PostgreSql;
-using Xpand.Extensions.Blazor;
-using Xpand.XAF.Modules.JobScheduler.Hangfire.Hangfire;
 
-[assembly: HostingStartup(typeof(HostingStartup))]
-[assembly: HostingStartup(typeof(HangfireStartup))]
-[assembly: HostingStartup(typeof(Xpand.XAF.Modules.Blazor.BlazorStartup))]
 namespace XpandTest.Blazor.Server;
 
 public class Startup {
@@ -35,6 +29,7 @@ public class Startup {
         services.AddServerSideBlazor();
         services.AddHttpContextAccessor();
         services.AddScoped<CircuitHandler, CircuitHandlerProxy>();
+      
         services.AddXaf(Configuration, builder => {
             builder.UseApplication<XpandTestBlazorApplication>();
             builder.Modules
@@ -96,12 +91,16 @@ public class Startup {
                     options.IsSupportChangePassword = true;
                 });
         });
-        services.AddHangfire(config => config.UseInMemoryStorage());
-        //services.AddHangfire(configuration => configuration
-        //.UsePostgreSqlStorage(Configuration.GetConnectionString("HangfireConnection")));
+        
+
         services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(options => {
             options.LoginPath = "/LoginPage";
         });
+
+        //var hangFireConnection = Configuration.GetConnectionString("HangfireConnection");
+        //Hangfire.GlobalConfiguration.Configuration.UsePostgreSqlStorage(hangFireConnection);
+        GlobalConfiguration.Configuration.UseInMemoryStorage();
+        //Hangfire.GlobalConfiguration.Configuration.UseMemoryStorage();
     }
 
     // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

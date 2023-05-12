@@ -8,7 +8,7 @@ using DevExpress.Persistent.Validation;
 using DevExpress.Xpo;
 using DevExpress.XtraRichEdit;
 using Microsoft.AspNetCore.StaticFiles;
-using Xpand.XAF.Modules.JobScheduler.Hangfire;
+
 
 namespace XpandTest.Module.BusinessObjects;
 [DefaultClassOptions]

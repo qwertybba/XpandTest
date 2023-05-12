@@ -24,5 +24,6 @@
   </SchemaModules>
   <Views>
     <ListView Id="ApplicationUser_ListView" Caption="Users" />
+    <ListView Id="JobWorker_LookupListView" MasterDetailMode="ListViewAndDetailView" />
   </Views>
 </Application>

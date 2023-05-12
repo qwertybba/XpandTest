@@ -1,7 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Application>
-  <NavigationItems NavigationStyle="Accordion">
-  </NavigationItems>
-  <Views DefaultListEditor="DevExpress.ExpressApp.Blazor.Editors.DxGridListEditor">
-  </Views>
+  <NavigationItems NavigationStyle="Accordion" />
+  <ReactiveModules>
+    <Blazor>
+      <ListViewFeatures>
+        <ListViewFeatureDxDataGridModel Id="@fd8523e2-3b00-4ea6-b20b-7417893a53d7" Removed="True">
+          <ListViews>
+            <ListViewKey ListViewId="NormativeMonitoring_ListView" IsNewNode="True" />
+          </ListViews>
+        </ListViewFeatureDxDataGridModel>
+        <ListViewFeatureDxDataGridModel Id="gridlist" ColumnResizeMode="NextColumn" ShowFilterRow="True" IsNewNode="True">
+          <ListViews IsNewNode="True">
+            <ListViewKey ListViewId="NormativeMonitoring_ListView" IsNewNode="True" />
+          </ListViews>
+        </ListViewFeatureDxDataGridModel>
+      </ListViewFeatures>
+    </Blazor>
+  </ReactiveModules>
+  <SchemaModules>
+    <SchemaModule Name="CloneObjectModule" Version="22.2.6.0" IsNewNode="True" />
+    <SchemaModule Name="SystemModule" Version="22.2.6.0" IsNewNode="True" />
+  </SchemaModules>
+  <Views DefaultListEditor="DevExpress.ExpressApp.Blazor.Editors.DxGridListEditor" />
 </Application>

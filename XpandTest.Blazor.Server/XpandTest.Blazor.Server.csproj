@@ -1,35 +1,36 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk.Web">
-  <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
-    <CheckEolTargetFramework>false</CheckEolTargetFramework>
-    <Deterministic>false</Deterministic>
-    <AssemblyVersion>1.0.*</AssemblyVersion>
-    <FileVersion>1.0.0.0</FileVersion>
-    <Configurations>Debug;Release;EasyTest</Configurations>
-    <ImplicitUsings>enable</ImplicitUsings>
-  </PropertyGroup>
-  <ItemGroup>
-    <None Remove="Model.xafml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Model.xafml">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="DevExpress.ExpressApp.Blazor" Version="22.2.5" />
-    <PackageReference Include="DevExpress.ExpressApp.CodeAnalysis" Version="22.2.5" />
-    <PackageReference Include="DevExpress.ExpressApp.Dashboards.Blazor" Version="22.2.5" />
-    <PackageReference Include="DevExpress.ExpressApp.FileAttachment.Blazor" Version="22.2.5" />
-    <PackageReference Include="DevExpress.ExpressApp.Office.Blazor" Version="22.2.5" />
-    <PackageReference Include="DevExpress.ExpressApp.ReportsV2.Blazor" Version="22.2.5" />
-    <PackageReference Include="DevExpress.ExpressApp.Security.Xpo" Version="22.2.5" />
-    <PackageReference Include="DevExpress.ExpressApp.Validation.Blazor" Version="22.2.5" />
-    <PackageReference Include="Hangfire.InMemory" Version="0.3.7" />
-    <PackageReference Include="Hangfire.PostgreSql" Version="1.19.12" />
-	<PackageReference Include="Npgsql" Version="7.0.2" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\XpandTest.Module\XpandTest.Module.csproj" />
-  </ItemGroup>
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<CheckEolTargetFramework>false</CheckEolTargetFramework>
+		<Deterministic>false</Deterministic>
+		<AssemblyVersion>1.0.*</AssemblyVersion>
+		<FileVersion>1.0.0.0</FileVersion>
+		<Configurations>Debug;Release;EasyTest</Configurations>
+		<ImplicitUsings>enable</ImplicitUsings>
+	</PropertyGroup>
+	<ItemGroup>
+		<None Remove="Model.xafml" />
+	</ItemGroup>
+	<ItemGroup>
+		<Content Include="Model.xafml">
+			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
+		</Content>
+	</ItemGroup>
+	<ItemGroup>
+		<PackageReference Include="DevExpress.ExpressApp.Blazor" Version="22.2.7-pre-23123" />
+		<PackageReference Include="DevExpress.ExpressApp.CodeAnalysis" Version="22.2.7-pre-23123" />
+		<PackageReference Include="DevExpress.ExpressApp.Dashboards.Blazor" Version="22.2.7-pre-23123" />
+		<PackageReference Include="DevExpress.ExpressApp.FileAttachment.Blazor" Version="22.2.7-pre-23123" />
+		<PackageReference Include="DevExpress.ExpressApp.Office.Blazor" Version="22.2.7-pre-23123" />
+		<PackageReference Include="DevExpress.ExpressApp.ReportsV2.Blazor" Version="22.2.7-pre-23123" />
+		<PackageReference Include="DevExpress.ExpressApp.Security.Xpo" Version="22.2.7-pre-23123" />
+		<PackageReference Include="DevExpress.ExpressApp.Validation.Blazor" Version="22.2.7-pre-23123" />
+		<PackageReference Include="Hangfire.InMemory" Version="0.4.0" />
+		<PackageReference Include="System.Interactive" Version="6.0.1" />
+		<PackageReference Include="Xpand.XAF.Modules.Email" Version="4.222.10" />
+		<PackageReference Include="Xpand.XAF.Modules.JobScheduler.Hangfire" Version="4.222.10" />
+	</ItemGroup>
+	<ItemGroup>
+		<ProjectReference Include="..\XpandTest.Module\XpandTest.Module.csproj" />
+	</ItemGroup>
 </Project>
